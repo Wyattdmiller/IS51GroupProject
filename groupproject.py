@@ -27,3 +27,37 @@ Otherwise if the letters-used list is smaller, it will print
 "Your sentence uses (#) letters of the alphabet. They are:
 (letters-used)"
 """
+
+""" Pseudocode
+alphabet = ['a' 'b' 'c' 'd' ... 'z']
+totalLengths = 0
+wordLength = 0
+used = []
+missing = []
+sentence = input("Enter a sentence that you would like to know more about")
+wordList = sentence words
+letterList = sentence letters
+
+for word in wordList
+  wordLength = len(word)
+  totalLengths += wordLength
+avg = totalLengths / len(wordList)
+
+print("Your sentence has len(wordList) words in it")
+print("The words are an average of avg letters long")
+
+for letter in alphabet:
+  if sentence contains (letter):
+    append letter to used
+  else:
+    append letter to missing
+
+if len(missing) == 0:
+  print("Your sentence uses every letter of the alphabet!")
+elif len(missing) < len(used):
+  print("Your sentence is missing len(missing) letters of the alphabet. They are:")
+  print(missing)
+else:
+  print("Your sentence uses len(used) letters of the alphanet. They are:")
+  print(used)
+"""
