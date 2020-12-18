@@ -61,3 +61,43 @@ else:
   print("Your sentence uses len(used) letters of the alphanet. They are:")
   print(used)
 """
+
+def main():
+  alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  totalLengths = 0
+  wordLength = 0
+  used = []
+  missing = []
+  sentence = input("Enter a sentence that you would like to know more about. ")
+  sentence = sentence.lower()
+  wordList = sentence.split()
+  letterList = list(sentence)
+
+  avg(wordList, totalLengths)
+  letters(alphabet, sentence, used, missing)
+
+def avg(wordList, totalLengths):
+  for word in wordList:
+    wordLength = (len(word))
+    totalLengths += wordLength
+  avgWordLength = round(totalLengths / (len(wordList)), 2)
+  print(f"Your sentence has {len(wordList)} words in it.")
+  print(f"The words are an average of {avgWordLength} letters long.")
+
+def letters(alphabet, sentence, used, missing):
+  for letter in alphabet:
+    if sentence.__contains__(letter):
+      used.append(letter)
+    else:
+      missing.append(letter)
+    
+  if len(missing) == 0:
+    print("Your sentence uses every letter of the alphabet!")
+  elif len(missing) < len(used):
+    print(f"Your sentence is missing {len(missing)} letters of the alphabet. They are:")
+    print(missing)
+  else:
+    print(f"Your sentence uses {len(used)} letters of the alphabet. They are:")
+    print(used)
+
+main()
